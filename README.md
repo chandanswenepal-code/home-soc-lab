@@ -11,7 +11,7 @@ A fully functional home SOC lab built from scratch to demonstrate hands-on SOC a
 **Contact:** chandan.swenepal@gmail.com
 **LinkedIn:** linkedin.com/in/chandan-yadavswe
 **HTB:** Top 6% globally — Cyber Apocalypse CTF 2026 (407 of 6,744 teams)
-**Certs:** TryHackMe SOC Level 1 · Cyber Security 101 · Pre Security · ISC2 CC (In Progress)
+
 
 ## Lab Architecture
 
@@ -88,4 +88,3 @@ Five professional SOC incident reports in /incident-reports/ covering:
 
 ---
 
-Built as part of a 60-day SOC analyst job preparation roadmap targeting remote entry-level positions.
