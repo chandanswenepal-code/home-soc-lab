@@ -1,0 +1,11 @@
+alert tcp any any -> any 23 (msg:"SOC-LAB Telnet Connection Attempt Detected"; flow:to_server; flags:S; sid:1000001; rev:1;)
+alert tcp any any -> $HOME_NET any (msg:"SOC-LAB Nmap Port Scan Detected"; flags:S; threshold:type threshold,track by_src,count 5,seconds 2; sid:1000002; rev:1;)
+alert tcp any any -> any 4444 (msg:"SOC-LAB Metasploit C2 Port 4444 Detected"; flow:to_server; flags:S; sid:1000003; rev:1;)
+alert tcp any any -> $HOME_NET 3389 (msg:"SOC-LAB RDP Brute Force Attempt Detected"; flow:to_server; flags:S; threshold:type threshold,track by_src,count 5,seconds 10; sid:1000004; rev:1;)
+alert tcp any any -> $HOME_NET 22 (msg:"SOC-LAB SSH Brute Force Attempt Detected"; flow:to_server; flags:S; threshold:type threshold,track by_src,count 5,seconds 10; sid:1000005; rev:1;)
+alert tcp any any -> $HOME_NET 21 (msg:"SOC-LAB FTP Connection Attempt Detected"; flow:to_server; flags:S; sid:1000006; rev:1;)
+alert udp any any -> any 53 (msg:"SOC-LAB Possible DNS Tunneling Detected"; dsize:>512; sid:1000007; rev:1;)
+alert icmp any any -> $HOME_NET any (msg:"SOC-LAB ICMP Ping Sweep Detected"; itype:8; threshold:type threshold,track by_src,count 5,seconds 5; sid:1000008; rev:1;)
+alert tcp any any -> $HOME_NET 445 (msg:"SOC-LAB SMB Lateral Movement Attempt Detected"; flow:to_server; flags:S; threshold:type threshold,track by_src,count 3,seconds 5; sid:1000009; rev:1;)
+alert http any any -> any any (msg:"SOC-LAB PowerShell Download Cradle Detected"; content:"PowerShell"; http_user_agent; nocase; sid:1000010; rev:1;)
+
