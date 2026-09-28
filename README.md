@@ -19,6 +19,13 @@ A fully functional home SOC lab built from scratch to demonstrate hands-on SOC a
 - Kali Linux 2026.2 — SOC Workstation — 192.168.173.131
 - Windows Server 2022 — Target Endpoint — 192.168.173.130
 - Network: Host-Only (192.168.173.0/24) isolated lab network
+  <img width="1200" height="1050" alt="soc_lab_architecture" src="https://github.com/user-attachments/assets/888e3714-7414-4ebd-96fc-c9af2d094471" />
+
+
+Three-VM lab running on VMware Workstation Pro 26H1 (16 GB RAM host).
+All traffic between endpoints passes through pfSense 2.9.0 CE firewall.
+Suricata IDS monitors the Host-Only LAN with 52,833 signatures + 10 custom rules.
+Wazuh Agent on Windows Server forwards Sysmon telemetry to Wazuh SIEM on Kali.
 
 ## Tools Stack
 
